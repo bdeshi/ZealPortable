@@ -1,0 +1,3 @@
+docsets are installed here.
+Don't bother changing the docset path from within Zeal,
+It will revert to this location upon restart.

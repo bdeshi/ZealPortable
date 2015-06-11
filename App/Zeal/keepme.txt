@@ -1,0 +1,1 @@
+extract zeal program files here, so that zeal.exe lives as ZealPortable\App\Zeal\zeal.exe
