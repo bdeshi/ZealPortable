@@ -1,33 +1,40 @@
 ::set path to PortableAppsLauncher Generator executable as %LAUNCHERGEN%
-::package will be built in repo\build
+::package will be built in repo\ZealPortable
+SET LauncherGen=E:\Projects\PortableAppsPackage\PortableAppsLauncher\PortableApps.comLauncherGenerator.exe
+
+echo off
 SETLOCAL  ENABLEEXTENSIONS
 cd %~dp0
-SET LauncherGen=E:\Projects\PortableAppsPackage\PortableAppsLauncher\PortableApps.comLauncherGenerator.exe
-@echo off 
 
+DEL   /Q     .\ZealPortable\*.*
+RMDIR /S /Q  .\ZealPortable\App\AppInfo
+RMDIR /S /Q  .\ZealPortable\Data
+RMDIR /S /Q  .\ZealPortable\Other
 
-::DEL     /F /Q  .\ZealPortable.exe
 "%LAUNCHERGEN%" "%cd%"
 
-DEL   /F /Q  .\build
-RMDIR /S /Q  .\build
+MKDIR        .\ZealPortable
+MKDIR        .\ZealPortable\App
+MKDIR        .\ZealPortable\Data
+MKDIR        .\ZealPortable\Doc
+MKDIR        .\ZealPortable\Other
 
-MKDIR     .\build
-MKDIR     .\build\Data
-MKDIR     .\build\Other
+XCOPY     /Y /R /Q /C /I /E  .\App\*             .\ZealPortable\App\
+XCOPY     /Y /R /Q /C /I /E  .\Doc\*             .\ZealPortable\Doc\
+XCOPY     /Y /R /Q /C /I /E  .\Data\*            .\ZealPortable\Data\
+XCOPY     /Y /R /Q /C /I     .\ZealPortable.exe  .\ZealPortable\
 
-XCOPY     /Y /Q /C        .\Zealportable.exe  .\build\
-XCOPY     /Y /Q /C /E /I  .\App\*             .\build\App\
-XCOPY     /Y /Q /C /E /I  .\Doc\*             .\build\Doc\
-XCOPY     /Y /Q /C /E /I  .\Data\*            .\build\Data\
+DEL /F /Q  .\ZealPortable.exe
 
-echo ---- ---- ---- 
-echo ---- ---- ---- 
-echo ---- ---- ---- 
-echo ---- ---- ---- 
-echo built ZealPortable launcher at .\build\
-echo   [%cd%\build\]
-echo  Copy .\build\ to desired install location.
+echo -
+echo - 
+echo - 
+echo - 
+echo built ZealPortable launcher at .\ZealPortable\
+echo   [%cd%\ZealPortable\]
 echo ...
-echo Extract Zeal program files to .\build\App\Zeal\
-echo Docsets shall be installed at .\build\Doc\
+echo Extract Zeal program files to .\ZealPortable\App\Zeal\
+echo Copy .\ZealPortable\ to desired install location.
+echo ...
+echo Docsets shall be installed at .\ZealPortable\Doc\
+echo Happy portable doc-grokking!
