@@ -1,6 +1,6 @@
 ::set path to PortableAppsLauncher Generator executable as %LAUNCHERGEN%
 ::package will be built in repo\ZealPortable
-SET LauncherGen=E:\Projects\PortableAppsPackage\PortableAppsLauncher\PortableApps.comLauncherGenerator.exe
+SET LauncherGen=..\..\PortableApps\PALauncher\PortableApps.comLauncherGenerator.exe
 
 echo off
 SETLOCAL  ENABLEEXTENSIONS
