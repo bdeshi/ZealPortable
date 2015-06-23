@@ -1,2 +1,3 @@
-RMDIR /S /Q  .\ZealPortable
-DEL   /F /Q  .\ZealPortable.exe
+SET APP=ZealPortable
+RMDIR /S /Q  ".\%APP%"
+DEL   /F /Q  ".\%APP%.exe"
