@@ -1,3 +1,6 @@
+### Zeal now has a [native portable package for Windows](https://zealdocs.org/download.html#windows). This project is obsolete.
+<hr><br><br>
+
 #ZealPortable
 A PortableApps Launcher for [Zeal](http://zealdocs.org/) *(for Windows platform)*
 
